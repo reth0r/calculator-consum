@@ -54,7 +54,7 @@ const btn = document.getElementById('btn1')
 btn1.addEventListener ('click', txtBox())
 
 
-
+//
 
     // activare reset
    //form.reset();
