@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="calcul.css" />
+    <title>Calculator consum</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="myForm" class="formular">
+        <label for="inputField"> </label>
+        <p>Consum (l/100km)</p>
+        <input type="text" id="inputField" />
+        <p>Distanta (km)</p>
+        <input type="text" id="inputField2" />
+        <p>Pret Combustibil (lei)</p>
+        <input type="text" id="inputField3" />
+        <p id="displayArea1"></p>
+        <p id="displayArea2"></p>
+        <p id="displayArea3"></p>
+        <div class="checkbox">
+          <p>Retur</p>
+          <input type="checkbox" id="check" />
+        </div>
+
+        <button type="submit" class="btn" id="btn1">Calculeaza</button>
+      </form>
+    </div>
+
+    <script src="calcul.js"></script>
+  </body>
+</html>

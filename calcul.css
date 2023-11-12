@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url(./pexels-sergio-souza-3602009.jpg) center center/cover;
+}
+
+.container {
+  background-color: orange;
+  width: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 15px;
+  opacity: 0.98;
+  font-size: 1.2rem;
+}
+
+.formular {
+  width: 14rem;
+  display: flex;
+
+  flex-direction: column;
+}
+
+.btn {
+  margin-top: 10px;
+  height: 2rem;
+  border-radius: 5px;
+  border: 1px solid;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.btn:hover {
+  background-color: greenyellow;
+  color: white;
+}
+
+input {
+  height: 1.5rem;
+}
+
+.checkbox {
+  display: flex;
+}
+
+#check {
+  margin-left: 5px;
+  width: 15px;
+}
