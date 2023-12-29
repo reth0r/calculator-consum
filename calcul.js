@@ -1,62 +1,44 @@
+const form = document.getElementById("myForm");
+const inputField = document.getElementById("inputField");
+const inputField2 = document.getElementById("inputField2");
+const inputField3 = document.getElementById("inputField3");
+const txt1 = document.getElementById("displayArea1");
+const txt2 = document.getElementById("displayArea2");
+const txt3 = document.getElementById("displayArea3");
+const checkBox = document.getElementById("check");
+const btn = document.getElementById("btn1");
+const btnReset = document.getElementById("btnReset");
 
-var form = document.getElementById("myForm");
-var inputField = document.getElementById("inputField");
-var inputField2 = document.getElementById("inputField2");
-var inputField3 = document.getElementById("inputField3");
-var txt1 = document.getElementById('displayArea1');
-var txt2 = document.getElementById('displayArea2');
-var txt3 = document.getElementById('displayArea3');
-var checkBox = document.getElementById('check');
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
 
+  let consum = inputField.value;
+  let distanta = inputField2.value;
+  let pretCombustibil = inputField3.value;
 
-form.addEventListener("submit", function(event) {
-    event.preventDefault(); 
+  const fCalculConsum = function () {
+    return (((consum * distanta) / 100) * pretCombustibil).toFixed(2) + " Lei";
+  };
 
-    
-    var consum = inputField.value;
-    var distanta = inputField2.value;
-    var pretCombustibil = inputField3.value;
+  const fCalculLitri = function () {
+    return ((consum * distanta) / 100).toFixed(2);
+  };
 
-    
-    /*console.log("consum: " + consum);
-    console.log("distanta: " + distanta);
-    console.log("pret: " + pretCombustibil); */
+  const retur = parseInt(fCalculConsum()) * 2 + " Lei";
 
-
-
-    const x = function calculConsum() {
-      return  ((consum * distanta) / 100) * pretCombustibil + " Lei";
-      
-      }
-      
-      const y = function calculLitri () {
-        return ((consum * distanta) / 100) 
-      }
-      
-      const retur = parseInt(x()) * 2 + " Lei"
-      console.log (x())
-      console.log (y())
-      console.log (retur)      
-
-function txtBox () {
-  if (checkBox.checked) {
-  txt1.innerHTML = "Cost calatorie: " + retur;
-  txt2.innerHTML = "Litri consumati: " + y();
-  //txt3.innerHTML = "Retur: " + retur;
-  } else { 
-    txt1.innerHTML = "Cost calatorie: " + x();
-    txt2.innerHTML = "Litri consumati: " + y();
-
+  function txtBox() {
+    if (checkBox.checked) {
+      txt1.innerHTML = "Cost calatorie: " + retur;
+      txt2.innerHTML = "Litri consumati: " + fCalculLitri() * 2;
+    } else {
+      txt1.innerHTML = "Cost calatorie: " + fCalculConsum();
+      txt2.innerHTML = "Litri consumati: " + fCalculLitri();
+    }
   }
-} 
 
-const btn = document.getElementById('btn1')
-btn1.addEventListener ('click', txtBox())
+  btn.addEventListener("click", txtBox());
+});
 
-
-
-
-    // activare reset
-   //form.reset();
-
+btnReset.addEventListener("click", function () {
+  form.reset();
 });
