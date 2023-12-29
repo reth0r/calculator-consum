@@ -37,11 +37,6 @@ form.addEventListener("submit", function (event) {
   }
 
   btn.addEventListener("click", txtBox());
-
-  //
-
-  // actilete reset
-  //form.reset();
 });
 
 btnReset.addEventListener("click", function () {
